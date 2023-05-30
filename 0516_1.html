@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/0516_1.js"></script>
+</head>
+<body>
+    <img src="imgs/bo4.jpg" width="200" height="150" id="img">
+    <h1 id="h1">나는 누구인가?(클릭금지) </h1>
+ 
+<script>
+    var dog={
+        name : "보름이",
+        age : "3살"
+    }
+
+    var img=document.getElementById('img');
+    var h1=document.getElementById('h1');
+var i=0;
+img.onclick=function(){
+    if(i % 2){       // 나머지가 1이면
+    h1.innerHTML=dog.name+"이고" + "&nbsp" + dog.age+"입니다";
+    }else{
+        h1.innerHTML = "나는 누구인가?(클릭금지)";
+    }
+    i++;
+
+    // 이미지에 마우스를 올릴 때 사진 교체하기
+    img.onmouseover=function(){
+        this.src="imgs/bo5.jpg";
+        this.witdh=200;
+        this.height=150;
+    }
+    img.onmouseout=function(){
+        this.src="imgs/bo4.jpg";
+        this.witdh=200;
+        this.height=150;
+    }
+    // 고전이벤트 (잘 안 쓰는)
+    img.ondblclick=function(){
+        h1.style.backgroundColor="slateblue";
+        h1.style.border="5px double black";
+        h1.style.padding="10px";
+        h1.style.borderRadius="50px";
+    }
+}
+</script>
+</body>
+</html>
